@@ -22,6 +22,17 @@ const Theme = {
 };
 
 function App() {
+  try {
+    // const headTag = document.querySelector("head");
+    // const icon = document.createElement("link");
+    // icon.setAttribute("rel", "icon");
+    // icon.setAttribute("href", "./assets/logo-reduced.png");
+    // headTag.appendChild(icon);
+  } catch (e) {
+    console.log(e);
+    // oops?
+  }
+
   const options = {
     home: {
       title: "KLM Codes",

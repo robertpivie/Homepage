@@ -1,12 +1,17 @@
 {
-  "name": "splash",
-  "displayName": "splash",
+  "name": "KLM Codes",
+  "displayName": "KLM Codes",
   "expo": {
-    "name": "splash",
-    "slug": "splash",
+    "name": "KLM Codes",
+    "slug": "KLM Codes",
     "version": "1.0.0",
-    "assetBundlePatterns": [
-      "**/*"
-    ]
+    "assetBundlePatterns": ["**/*"],
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/logo.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#fff"
+    }
   }
 }

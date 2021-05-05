@@ -12,7 +12,7 @@ import { useTheme } from "@react-navigation/native";
 import LottieView from "lottie-react-native";
 
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { faComments, faPiggyBank } from "@fortawesome/free-solid-svg-icons";
+import { faCheckDouble, faComments } from "@fortawesome/free-solid-svg-icons";
 import robotArm from "../assets/robot-arm-2.json.json";
 import cog from "../assets/cog.jpg";
 
@@ -50,17 +50,22 @@ export default function Home() {
 
   const styles = StyleSheet.create({
     main: {
-      height: "calc(100vh - 64px)",
+      height: "calc(100vh - 110px)",
       overflow: "auto",
     },
     headerContainer: {},
     header: {
-      backgroundColor: "rgba( 255, 255, 255, 1 )",
+      backgroundColor: colors.background,
       padding: "50px",
       marginTop: "0px",
       marginLeft: "auto",
       marginBottom: "0px",
       marginRight: "auto",
+    },
+    bar: {
+      width: "100%",
+      height: "4px",
+      backgroundColor: colors.border,
     },
     title: {
       paddingLeft: "50px",
@@ -68,6 +73,7 @@ export default function Home() {
       fontSize: "50px",
       fontWeight: "bold",
       textAlign: "center",
+      fontFamily: "'Times New Roman', serif",
     },
     subtitle: {
       paddingBottom: "40px",
@@ -94,18 +100,18 @@ export default function Home() {
       padding: "15px",
       minWidth: "200px",
       fontSize: "20px",
+      fontWeight: "bold",
       color: colors.background,
       backgroundColor: colors.border,
     },
     modal: {
-      backgroundColor: "rgba( 255, 255, 255, 0.7 )",
       width: "100vw",
       height: "100vh",
       position: "fixed",
       top: "0",
     },
     contact: {
-      backgroundColor: "rgba( 255, 255, 255, 1 )",
+      backgroundColor: colors.background,
       width: "100vw",
       height: "100vh",
       marginLeft: "auto",
@@ -127,7 +133,7 @@ export default function Home() {
       paddingRight: "10px",
     },
     valueImageContainer: {
-      backgroundColor: "rgba( 0, 0, 0, .2 )",
+      backgroundColor: "rgba(0, 0, 0, 0.2)",
       paddingLeft: "5px",
       paddingRight: "5px",
       width: "50%",
@@ -137,11 +143,11 @@ export default function Home() {
     },
     valueTitle: {
       fontSize: "30px",
-      color: "rgba( 255, 255, 255, 1 )",
+      color: colors.background,
       textAlign: "right",
     },
     valueTextContainer: {
-      backgroundColor: "rgba( 255, 255, 255, 1 )",
+      backgroundColor: colors.background,
       padding: "5px",
       width: "50%",
       height: "120px",
@@ -152,9 +158,11 @@ export default function Home() {
       textAlign: "center",
       fontSize: "20px",
     },
-    missionServicesContainer: { width: isMediumWidth ? "50%" : "100%" },
+    missionServicesContainer: {
+      width: isMediumWidth ? "50%" : "100%",
+      backgroundColor: colors.primary,
+    },
     missionContainer: {
-      backgroundColor: "rgba( 255, 255, 255, 1 )",
       width: "100%",
     },
     mission: {
@@ -166,21 +174,23 @@ export default function Home() {
     missionTitle: {
       textAlign: "center",
       fontSize: "30px",
+      color: colors.background,
     },
     missionBody: {
       textAlign: "justify",
       fontSize: "20px",
+      color: colors.background,
     },
     break: {
-      backgroundColor: "rgba( 255, 255, 255, 0 )",
+      backgroundOpacity: "0",
       height: "40px",
     },
     servicesContainer: {
-      backgroundColor: "rgba( 255, 255, 255, 1 )",
+      backgroundColor: colors.background,
       width: "100%",
     },
     services: {
-      backgroundColor: "rgba( 255, 255, 255, 1 )",
+      backgroundColor: colors.background,
       paddingTop: "20px",
       paddingBottom: "20px",
       width: "300px",
@@ -219,6 +229,7 @@ export default function Home() {
       width: "100%",
       backgroundColor: colors.primary,
       padding: "5px",
+      height: "46px",
     },
     address: {
       textAlign: "center",
@@ -250,7 +261,9 @@ export default function Home() {
           <View style={styles.break} />
           <View style={styles.headerContainer}>
             <View style={styles.header}>
+              <View style={styles.bar}></View>
               <Text style={styles.title}>KLM CODES</Text>
+              <View style={styles.bar}></View>
               <Text style={styles.subtitle}>
                 Robust Software for Strong Businesses
               </Text>
@@ -258,7 +271,7 @@ export default function Home() {
                 style={{ ...styles.buttonContainer, justifyContent: "center" }}
               >
                 <TouchableOpacity onPress={() => setModalVisible(true)}>
-                  <Text style={styles.primaryButton}>GET IN TOUCH</Text>
+                  <Text style={styles.primaryButton}>GET IN TOUCH!</Text>
                 </TouchableOpacity>
               </View>
             </View>
@@ -267,25 +280,29 @@ export default function Home() {
           <View style={styles.break} />
           <View style={styles.values}>
             <View style={styles.valueContainer}>
+              <View style={styles.valueImageContainer}>
+                <Text style={styles.valueTitle}>Interactive</Text>
+                <FontAwesomeIcon color={"white"} size={64} icon={faComments} />
+              </View>
               <View style={styles.valueTextContainer}>
                 <Text style={styles.valueText}>
                   Processes that offer flexibility when change happens.
                 </Text>
               </View>
-              <View style={styles.valueImageContainer}>
-                <Text style={styles.valueTitle}>Interactive</Text>
-                <FontAwesomeIcon color={"white"} size={64} icon={faComments} />
-              </View>
             </View>
             <View style={styles.valueContainer}>
+              <View style={styles.valueImageContainer}>
+                <Text style={styles.valueTitle}>Economic</Text>
+                <FontAwesomeIcon
+                  color={"white"}
+                  size={64}
+                  icon={faCheckDouble}
+                />
+              </View>
               <View style={styles.valueTextContainer}>
                 <Text style={styles.valueText}>
                   Mindsets to help you make powerful decisions.
                 </Text>
-              </View>
-              <View style={styles.valueImageContainer}>
-                <Text style={styles.valueTitle}>Economic</Text>
-                <FontAwesomeIcon color={"white"} size={64} icon={faPiggyBank} />
               </View>
             </View>
           </View>
@@ -300,16 +317,6 @@ export default function Home() {
               />
             </View>
             <View style={styles.missionServicesContainer}>
-              <View style={styles.missionContainer}>
-                <View style={styles.mission}>
-                  <Text style={styles.missionTitle}>Mission</Text>
-                  <Text style={styles.missionBody}>
-                    KLM Codes uses the latest advances to help your buisness
-                    stay strong. Whether you need a little change or a full
-                    upgrade, we're with you.
-                  </Text>
-                </View>
-              </View>
               <View style={styles.servicesContainer}>
                 <View style={styles.services}>
                   <Text style={styles.servicesTitle}>Services</Text>
@@ -327,11 +334,17 @@ export default function Home() {
                   </View>
                 </View>
               </View>
+              <View style={styles.missionContainer}>
+                <View style={styles.mission}>
+                  <Text style={styles.missionTitle}>Mission</Text>
+                  <Text style={styles.missionBody}>
+                    KLM Codes uses the latest advances to help your buisness
+                    stay strong. Whether you need a little change or a full
+                    upgrade, we're with you.
+                  </Text>
+                </View>
+              </View>
             </View>
-          </View>
-          <View style={styles.footer}>
-            <Text style={styles.address}>172 W 1000 S, Orem UT, 84058</Text>
-            <Text style={styles.copyright}>Copyright © KLM Codes, LLC</Text>
           </View>
         </View>
         {modalVisible && (
@@ -356,6 +369,10 @@ export default function Home() {
             </View>
           </View>
         )}
+        <View style={styles.footer}>
+          <Text style={styles.address}>172 W 1000 S, Orem UT, 84058</Text>
+          <Text style={styles.copyright}>Copyright © KLM Codes, LLC</Text>
+        </View>
       </ImageBackground>
     </View>
   );
