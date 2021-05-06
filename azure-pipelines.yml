@@ -1,0 +1,11 @@
+# klm pipeline
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: expo build:web
+  displayName: 'expo'
