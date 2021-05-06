@@ -36,7 +36,7 @@ export default function Home() {
     window.addEventListener("resize", handleResize);
   });
 
-  const isMediumWidth = dimensions.width > 500;
+  const isMediumWidth = dimensions.width > 600;
 
   const send = () => {
     const encodedBody = encodeURIComponent(`${body}\n\n`);
@@ -137,20 +137,19 @@ export default function Home() {
       paddingLeft: "5px",
       paddingRight: "5px",
       width: "50%",
-      height: "120px",
+      height: "160px",
       alignItems: "center",
       justifyContent: "center",
     },
     valueTitle: {
       fontSize: "30px",
-      color: colors.background,
       textAlign: "right",
     },
     valueTextContainer: {
       backgroundColor: colors.background,
       padding: "5px",
       width: "50%",
-      height: "120px",
+      height: "160px",
       alignItems: "center",
       justifyContent: "center",
     },
@@ -158,12 +157,9 @@ export default function Home() {
       textAlign: "center",
       fontSize: "20px",
     },
-    missionServicesContainer: {
-      width: isMediumWidth ? "50%" : "100%",
-      backgroundColor: colors.primary,
-    },
     missionContainer: {
       width: "100%",
+      backgroundColor: colors.primary,
     },
     mission: {
       paddingTop: "20px",
@@ -186,8 +182,8 @@ export default function Home() {
       height: "40px",
     },
     servicesContainer: {
+      width: isMediumWidth ? "50%" : "100%",
       backgroundColor: colors.background,
-      width: "100%",
     },
     services: {
       backgroundColor: colors.background,
@@ -250,7 +246,7 @@ export default function Home() {
       backgroundColor: colors.background,
     },
     animation: {
-      width: isMediumWidth ? "300px" : "100%",
+      width: "200px",
       margin: "auto",
     },
   });
@@ -279,20 +275,21 @@ export default function Home() {
           <View style={styles.break} />
           <View style={styles.break} />
           <View style={styles.values}>
+            <View style={styles.bar}></View>
             <View style={styles.valueContainer}>
               <View style={styles.valueImageContainer}>
-                <Text style={styles.valueTitle}>Interactive</Text>
                 <FontAwesomeIcon color={"white"} size={64} icon={faComments} />
               </View>
               <View style={styles.valueTextContainer}>
+                <Text style={styles.valueTitle}>Interactive</Text>
                 <Text style={styles.valueText}>
                   Processes that offer flexibility when change happens.
                 </Text>
               </View>
             </View>
+            <View style={styles.bar}></View>
             <View style={styles.valueContainer}>
               <View style={styles.valueImageContainer}>
-                <Text style={styles.valueTitle}>Economic</Text>
                 <FontAwesomeIcon
                   color={"white"}
                   size={64}
@@ -300,11 +297,13 @@ export default function Home() {
                 />
               </View>
               <View style={styles.valueTextContainer}>
+                <Text style={styles.valueTitle}>Economic</Text>
                 <Text style={styles.valueText}>
                   Mindsets to help you make powerful decisions.
                 </Text>
               </View>
             </View>
+            <View style={styles.bar}></View>
           </View>
           <View style={styles.break} />
           <View style={styles.stackableContainer}>
@@ -316,34 +315,40 @@ export default function Home() {
                 loop
               />
             </View>
-            <View style={styles.missionServicesContainer}>
-              <View style={styles.servicesContainer}>
-                <View style={styles.services}>
-                  <Text style={styles.servicesTitle}>Services</Text>
-                  <View style={styles.servicesBody}>
-                    <View style={styles.servicesLeft}>
-                      <Text style={styles.serviceLeft}>Development</Text>
-                      <Text style={styles.serviceLeft}>Integration</Text>
-                      <Text style={styles.serviceLeft}>Architecture</Text>
-                    </View>
-                    <View style={styles.servicesRight}>
-                      <Text style={styles.serviceRight}>Localization</Text>
-                      <Text style={styles.serviceRight}>Optimization</Text>
-                      <Text style={styles.serviceRight}>Pipelines</Text>
-                    </View>
+            <View style={styles.servicesContainer}>
+              <View style={styles.services}>
+                <Text style={styles.servicesTitle}>Services</Text>
+                <View style={styles.servicesBody}>
+                  <View style={styles.servicesLeft}>
+                    <Text style={styles.serviceLeft}>Development</Text>
+                    <Text style={styles.serviceLeft}>Integration</Text>
+                    <Text style={styles.serviceLeft}>Architecture</Text>
+                    <View style={styles.bar}></View>
+                    <Text style={styles.serviceLeft}>Strategy</Text>
+                    <Text style={styles.serviceLeft}>Finance</Text>
+                    <Text style={styles.serviceLeft}>Teamwork</Text>
+                  </View>
+                  <View style={styles.servicesRight}>
+                    <Text style={styles.serviceRight}>Localization</Text>
+                    <Text style={styles.serviceRight}>Optimization</Text>
+                    <Text style={styles.serviceRight}>Deployment</Text>
+                    <View style={styles.bar}></View>
+                    <Text style={styles.serviceRight}>Planning</Text>
+                    <Text style={styles.serviceRight}>Experience</Text>
+                    <Text style={styles.serviceRight}>Enterprise</Text>
                   </View>
                 </View>
               </View>
-              <View style={styles.missionContainer}>
-                <View style={styles.mission}>
-                  <Text style={styles.missionTitle}>Mission</Text>
-                  <Text style={styles.missionBody}>
-                    KLM Codes uses the latest advances to help your buisness
-                    stay strong. Whether you need a little change or a full
-                    upgrade, we're with you.
-                  </Text>
-                </View>
-              </View>
+            </View>
+          </View>
+          <View style={styles.missionContainer}>
+            <View style={styles.mission}>
+              <Text style={styles.missionTitle}>Mission</Text>
+              <Text style={styles.missionBody}>
+                KLM Codes uses the latest advances to help your buisness stay
+                strong. Whether you need a little change or a full upgrade,
+                we're with you.
+              </Text>
             </View>
           </View>
         </View>
