@@ -68,8 +68,7 @@ export default function Home() {
       backgroundColor: colors.border,
     },
     title: {
-      paddingLeft: "50px",
-      paddingRight: "50px",
+      padding: isMediumWidth ? "0" : "0 50px",
       fontSize: "50px",
       fontWeight: "bold",
       textAlign: "center",
